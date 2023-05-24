@@ -4,7 +4,7 @@ START=91
 
 start() {
     if [ ! -f "/usr/sbin/uu/uuplugin_monitor.sh" ]; then
-        wget http://uu.gdl.netease.com/uuplugin-script/202010221713/install.sh -O install.sh
+        wget http://uu.gdl.netease.com/uuplugin-script/202012111056/install.sh -O install.sh
         /bin/sh install.sh openwrt $(uname -m)
         rm install.sh
     fi

@@ -17,6 +17,8 @@ RUN /etc/init.d/firewall disable
 RUN /etc/init.d/uhttpd disable
 RUN /etc/init.d/dropbear disable
 
-ADD config.sh /config.sh
-RUN sh /config.sh
-RUN rm /config.sh
+ADD network /etc/config/network
+
+RUN sed -i "s/UU_IP/${UU_IP}/g" /etc/config/network
+RUN sed -i "s/UU_GATEWAY/${UU_GATEWAY}/g" /etc/config/network
+RUN sed -i "s/UU_NETMASK/${UU_NETMASK}/g" /etc/config/network
